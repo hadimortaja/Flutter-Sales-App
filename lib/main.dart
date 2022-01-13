@@ -52,6 +52,7 @@ class _MyAppState extends State<MyApp> {
       builder: () {
         return GetMaterialApp(
           theme: ThemeData(
+            
               scaffoldBackgroundColor: AppColors.whiteColor,
               accentColor: AppColors.primaryColor,
               scrollbarTheme: ScrollbarThemeData().copyWith(

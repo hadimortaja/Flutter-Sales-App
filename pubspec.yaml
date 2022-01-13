@@ -39,6 +39,7 @@ dependencies:
   flutter_svg: ^0.20.0-nullsafety
   localize_and_translate:
   font_awesome_flutter:
+  percent_indicator:
 
 
 
