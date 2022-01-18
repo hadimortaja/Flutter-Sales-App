@@ -3,11 +3,17 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sales_app/value/app_get.dart';
 import 'package:sales_app/value/colors.dart';
+import 'package:sales_app/view/Other%20Screens/barcode_screen.dart';
+import 'package:sales_app/view/Other%20Screens/new_customer_screen.dart';
+import 'package:sales_app/view/Other%20Screens/quantity_screen.dart';
+import 'package:sales_app/view/Other%20Screens/sell_non_item_screen.dart';
 import 'package:sales_app/widgets/alert_dialog_container.dart';
 import 'package:sales_app/widgets/custom_button.dart';
 import 'package:sales_app/widgets/custom_image.dart';
 import 'package:sales_app/widgets/custom_text.dart';
 import 'package:sales_app/widgets/drawer_widget.dart';
+
+import 'new_product_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -46,9 +52,17 @@ class HomeScreen extends StatelessWidget {
         drawer: DrawerWidget(),
         appBar: AppBar(
           actions: [
-            Icon(
-              Icons.add,
-              color: AppColors.primaryColor,
+            GestureDetector(
+              onTap: () {
+                Get.to(() => NewCustomerScreen());
+              },
+              child: Padding(
+                padding: EdgeInsets.only(right: 10.w),
+                child: Icon(
+                  Icons.person_add_alt,
+                  color: AppColors.primaryColor,
+                ),
+              ),
             )
           ],
           leading: GestureDetector(
@@ -89,18 +103,28 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           Spacer(),
-                          CustomPngImage(
-                            imageName: "barcode",
-                            height: 22.h,
-                            width: 22.w,
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(BarcodeScreen());
+                            },
+                            child: CustomPngImage(
+                              imageName: "barcode",
+                              height: 22.h,
+                              width: 22.w,
+                            ),
                           ),
                           SizedBox(
                             width: 20.w,
                           ),
-                          CustomPngImage(
-                            imageName: "lightning",
-                            height: 22.h,
-                            width: 22.w,
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(SellNonItemScreen());
+                            },
+                            child: CustomPngImage(
+                              imageName: "lightning",
+                              height: 22.h,
+                              width: 22.w,
+                            ),
                           ),
                           SizedBox(
                             width: 20.w,
@@ -113,19 +137,24 @@ class HomeScreen extends StatelessWidget {
                           SizedBox(
                             width: 20.w,
                           ),
-                          Container(
-                            // width: 40.w,
-                            // height: 20.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.r),
-                                border: Border.all(color: AppColors.black)),
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                  left: 8.w, right: 8.w, top: 5.h),
-                              child: CustomText(
-                                "1 X",
-                                color: AppColors.black,
-                                fontSize: 14.sp,
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(QuantityScreen());
+                            },
+                            child: Container(
+                              // width: 40.w,
+                              // height: 20.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5.r),
+                                  border: Border.all(color: AppColors.black)),
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 8.w, right: 8.w, top: 5.h),
+                                child: CustomText(
+                                  "1 X",
+                                  color: AppColors.black,
+                                  fontSize: 14.sp,
+                                ),
                               ),
                             ),
                           ),
@@ -177,18 +206,23 @@ class HomeScreen extends StatelessWidget {
                           return InkWell(
                             onTap: () {},
                             child: index == 0
-                                ? Container(
-                                    height: 300.h,
-                                    width: 100.w,
-                                    decoration: BoxDecoration(
-                                        color: AppColors.primaryColor,
-                                        borderRadius:
-                                            BorderRadius.circular(8.r)),
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.add,
-                                        color: AppColors.whiteColor,
-                                        size: 45.h,
+                                ? GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => NewProductScreen());
+                                    },
+                                    child: Container(
+                                      height: 300.h,
+                                      width: 100.w,
+                                      decoration: BoxDecoration(
+                                          color: AppColors.primaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(8.r)),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.add,
+                                          color: AppColors.whiteColor,
+                                          size: 45.h,
+                                        ),
                                       ),
                                     ),
                                   )

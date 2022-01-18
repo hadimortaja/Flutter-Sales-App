@@ -3,6 +3,12 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:sales_app/value/colors.dart';
+import 'package:sales_app/view/Other%20Screens/customers_screen.dart';
+import 'package:sales_app/view/Other%20Screens/home_screen.dart';
+import 'package:sales_app/view/Other%20Screens/new_customer_screen.dart';
+import 'package:sales_app/view/Other%20Screens/new_product_screen.dart';
+import 'package:sales_app/view/Other%20Screens/products_screen.dart';
+import 'package:sales_app/view/Other%20Screens/settings_screen.dart';
 import 'package:sales_app/widgets/custom_text.dart';
 import 'package:sales_app/widgets/drawer_item.dart';
 
@@ -100,17 +106,23 @@ class DrawerWidget extends StatelessWidget {
                 DrawerItem(
                   iconName: Icons.check_box_outlined,
                   title: "Checkout",
-                  onTap: () {},
+                  onTap: () {
+                    Get.off(() => HomeScreen());
+                  },
                 ),
                 DrawerItem(
                   iconName: Icons.dashboard_outlined,
                   title: "Products",
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => ProductsScreen());
+                  },
                 ),
                 DrawerItem(
                   iconName: Icons.person,
                   title: "Customers",
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => CustomersScreen());
+                  },
                 ),
                 DrawerItem(
                   iconName: Icons.monetization_on_outlined,
@@ -120,7 +132,9 @@ class DrawerWidget extends StatelessWidget {
                 DrawerItem(
                   iconName: Icons.settings,
                   title: "Settings",
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(SettingsScreen());
+                  },
                 ),
               ],
             ),
