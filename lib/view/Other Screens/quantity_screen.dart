@@ -58,11 +58,11 @@ class _QuantityScreenState extends State<QuantityScreen> {
                   },
                   child: CustomText(
                     "-",
-                    fontSize: 80.sp,
+                    fontSize: 60.sp,
                   ),
                 ),
                 SizedBox(
-                  width: 50.w,
+                  width: 100.w,
                 ),
                 // IconButton(
                 //     onPressed: () {
@@ -76,11 +76,11 @@ class _QuantityScreenState extends State<QuantityScreen> {
                 //     )),
                 CustomText(
                   value.toString(),
-                  fontSize: 80.sp,
+                  fontSize: 60.sp,
                   color: AppColors.primaryColor,
                 ),
                 SizedBox(
-                  width: 50.w,
+                  width: 100.w,
                 ),
 
                 GestureDetector(
@@ -91,7 +91,7 @@ class _QuantityScreenState extends State<QuantityScreen> {
                   },
                   child: CustomText(
                     "+",
-                    fontSize: 80.sp,
+                    fontSize: 60.sp,
                   ),
                 ),
                 // IconButton(
@@ -107,6 +107,9 @@ class _QuantityScreenState extends State<QuantityScreen> {
               ],
             ),
             // Spacer(),
+            SizedBox(
+              height: 20.h,
+            ),
             Container(
               width: Get.width,
               // height: 400.h,

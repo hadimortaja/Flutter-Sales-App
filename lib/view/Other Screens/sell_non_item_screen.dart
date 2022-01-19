@@ -33,8 +33,8 @@ class SellNonItemScreen extends StatelessWidget {
               height: 50.h,
             ),
             TextFormField(
-                style: TextStyle(color: AppColors.primaryColor, fontSize: 80.h),
-                initialValue: "\$0.00",
+                style: TextStyle(color: AppColors.primaryColor, fontSize: 60.h),
+                initialValue: "MYR 0.00",
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
                   border: InputBorder.none,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sales_app/value/colors.dart';
+import 'package:sales_app/view/Other%20Screens/add_customer_screen.dart';
 import 'package:sales_app/widgets/custom_button.dart';
 import 'package:sales_app/widgets/custom_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,9 @@ class CustomersScreen extends StatelessWidget {
                 height: 15.h,
               ),
               CustomButton(
-                onTap: () {},
+                onTap: () {
+                  Get.to(AddCustomerScreen());
+                },
                 width: Get.width,
                 height: 60.h,
                 title: "New Customer",

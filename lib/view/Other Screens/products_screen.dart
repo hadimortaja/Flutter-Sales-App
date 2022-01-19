@@ -3,6 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sales_app/value/colors.dart';
+import 'package:sales_app/view/Other%20Screens/categories_screen.dart';
+import 'package:sales_app/view/Other%20Screens/items_screen.dart';
+import 'package:sales_app/view/Other%20Screens/new_product_screen.dart';
+import 'package:sales_app/view/Other%20Screens/stock_screen.dart';
 import 'package:sales_app/widgets/custom_button.dart';
 import 'package:sales_app/widgets/custom_text.dart';
 import 'package:sales_app/widgets/custom_text_form_field.dart';
@@ -14,20 +18,20 @@ class ProductsScreen extends StatelessWidget {
       length: 3, // Number of Tabs
 
       child: Scaffold(
-        bottomSheet: Container(
-          height: 80.h,
-          width: Get.width,
-          decoration: BoxDecoration(color: AppColors.whiteColor),
-          child: Center(
-            child: CustomButton(
-              title: "Create Product",
-              color: AppColors.whiteColor,
-              onTap: () {
-                // Get.to(() => HomeScreen());
-              },
-            ),
-          ),
-        ),
+        // bottomSheet: Container(
+        //   height: 80.h,
+        //   width: Get.width,
+        //   decoration: BoxDecoration(color: AppColors.whiteColor),
+        //   child: Center(
+        //     child: CustomButton(
+        //       title: "Create Product",
+        //       color: AppColors.whiteColor,
+        //       onTap: () {
+        //         // Get.to(() => HomeScreen());
+        //       },
+        //     ),
+        //   ),
+        // ),
         backgroundColor: Color(0xffFAFAFA),
         appBar: AppBar(
           elevation: 0.0,
@@ -51,7 +55,7 @@ class ProductsScreen extends StatelessWidget {
             },
           ),
           title: CustomText(
-            "Items(0)",
+            "Items(2)",
             color: AppColors.black,
             fontSize: 18.sp,
             fontWeight: FontWeight.bold,
@@ -86,76 +90,7 @@ class ProductsScreen extends StatelessWidget {
               child: Container(
                 child: TabBarView(
                   // physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      // shrinkWrap: true,
-                      // primary: false,
-                      children: [
-                        Container(
-                          height: 120.h,
-                          width: 120.w,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12.r),
-                              color: AppColors.gray.withOpacity(0.23)),
-                          child: Center(
-                            child: Icon(
-                              Icons.add,
-                              size: 60.h,
-                              color: AppColors.primaryColor,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        CustomText(
-                          "Hey! Let's add your first!",
-                          fontSize: 16.sp,
-                          color: AppColors.gray,
-                        )
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      // shrinkWrap: true,
-                      // primary: false,
-                      children: [
-                        Container(
-                          height: 120.h,
-                          width: 120.w,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12.r),
-                              color: AppColors.gray.withOpacity(0.23)),
-                          child: Center(
-                            child: Icon(
-                              Icons.add,
-                              size: 60.h,
-                              color: AppColors.primaryColor,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        CustomText(
-                          "Create your first product to access the\nInventory Managment",
-                          textAlign: TextAlign.center,
-                          fontSize: 16.sp,
-                          color: AppColors.gray,
-                        )
-                      ],
-                    ),
-                    SingleChildScrollView(
-                      child: Column(
-                        // shrinkWrap: true,
-                        // primary: false,
-                        children: [],
-                      ),
-                    ),
-                  ],
+                  children: [ItemsScreen(), StockScreen(), CategoriesScreen()],
                 ),
               ),
             ),

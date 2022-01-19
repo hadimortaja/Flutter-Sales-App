@@ -5,6 +5,7 @@ import 'package:sales_app/value/app_get.dart';
 import 'package:sales_app/value/colors.dart';
 import 'package:sales_app/view/Other%20Screens/barcode_screen.dart';
 import 'package:sales_app/view/Other%20Screens/new_customer_screen.dart';
+import 'package:sales_app/view/Other%20Screens/products_screen.dart';
 import 'package:sales_app/view/Other%20Screens/quantity_screen.dart';
 import 'package:sales_app/view/Other%20Screens/sell_non_item_screen.dart';
 import 'package:sales_app/widgets/alert_dialog_container.dart';
@@ -206,34 +207,171 @@ class HomeScreen extends StatelessWidget {
                           return InkWell(
                             onTap: () {},
                             child: index == 0
-                                ? GestureDetector(
-                                    onTap: () {
-                                      Get.to(() => NewProductScreen());
-                                    },
-                                    child: Container(
-                                      height: 300.h,
-                                      width: 100.w,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.primaryColor,
-                                          borderRadius:
-                                              BorderRadius.circular(8.r)),
-                                      child: Center(
-                                        child: Icon(
-                                          Icons.add,
-                                          color: AppColors.whiteColor,
-                                          size: 45.h,
+                                ? Container(
+                                    // height: 120.h,
+                                    width: 120.w,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xff545D6E),
+                                      borderRadius: BorderRadius.circular(8.r),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 30.h,
                                         ),
-                                      ),
+                                        CustomText(
+                                          "Cola",
+                                          color: AppColors.whiteColor,
+                                          fontSize: 22.sp,
+                                        ),
+                                        Spacer(),
+                                        Container(
+                                          width: Get.width,
+                                          // height: 40.h,
+                                          decoration: BoxDecoration(
+                                              color: AppColors.secondary,
+                                              borderRadius: BorderRadius.only(
+                                                  bottomRight:
+                                                      Radius.circular(8.r),
+                                                  bottomLeft:
+                                                      Radius.circular(8.r))),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                CustomText(
+                                                  "Cola",
+                                                  color: AppColors.whiteColor,
+                                                  fontSize: 12.sp,
+                                                ),
+                                                CustomText(
+                                                  "MYR 10.00",
+                                                  color: AppColors.whiteColor,
+                                                  fontSize: 12.sp,
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        )
+                                      ],
                                     ),
                                   )
-                                : Container(
-                                    height: 300.h,
-                                    width: 100.w,
-                                    decoration: BoxDecoration(
-                                        color: AppColors.gray.withOpacity(0.23),
-                                        borderRadius:
-                                            BorderRadius.circular(8.r)),
-                                  ),
+                                : index == 1
+                                    ? Container(
+                                        // height: 120.h,
+                                        width: 120.w,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xff545D6E),
+                                          borderRadius:
+                                              BorderRadius.circular(8.r),
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 30.h,
+                                            ),
+                                            CustomText(
+                                              "Milo",
+                                              color: AppColors.whiteColor,
+                                              fontSize: 22.sp,
+                                            ),
+                                            Spacer(),
+                                            Container(
+                                              width: Get.width,
+                                              // height: 40.h,
+                                              decoration: BoxDecoration(
+                                                  color: AppColors.secondary,
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  8.r),
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  8.r))),
+                                              child: Padding(
+                                                padding: EdgeInsets.all(8.0),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    CustomText(
+                                                      "Milo",
+                                                      color:
+                                                          AppColors.whiteColor,
+                                                      fontSize: 12.sp,
+                                                    ),
+                                                    CustomText(
+                                                      "MYR 10.00",
+                                                      color:
+                                                          AppColors.whiteColor,
+                                                      fontSize: 12.sp,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    : index == 2
+                                        ? GestureDetector(
+                                            onTap: () {
+                                              Get.to(NewProductScreen());
+                                            },
+                                            child: Container(
+                                              // height: 120.h,
+                                              width: 120.w,
+                                              decoration: BoxDecoration(
+                                                color: AppColors.gray
+                                                    .withOpacity(0.23),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.r),
+                                              ),
+                                              child: Center(
+                                                child: Icon(
+                                                  Icons.add,
+                                                  size: 60.h,
+                                                  color: AppColors.gray,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+
+                                        //  GestureDetector(
+                                        //     onTap: () {
+                                        //       Get.to(() => NewProductScreen());
+                                        //     },
+                                        //     child: Container(
+                                        //       height: 300.h,
+                                        //       width: 100.w,
+                                        //       decoration: BoxDecoration(
+                                        //           color: AppColors.primaryColor,
+                                        //           borderRadius:
+                                        //               BorderRadius.circular(8.r)),
+                                        //       child: Center(
+                                        //         child: Icon(
+                                        //           Icons.add,
+                                        //           color: AppColors.whiteColor,
+                                        //           size: 45.h,
+                                        //         ),
+                                        //       ),
+                                        //     ),
+                                        //   )
+                                        : Container(
+                                            height: 300.h,
+                                            width: 100.w,
+                                            decoration: BoxDecoration(
+                                                color: AppColors.gray
+                                                    .withOpacity(0.23),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.r)),
+                                          ),
                           );
                         },
                         itemCount: 15,

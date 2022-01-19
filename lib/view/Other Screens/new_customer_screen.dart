@@ -5,6 +5,8 @@ import 'package:sales_app/widgets/custom_button.dart';
 import 'package:sales_app/widgets/custom_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'add_customer_screen.dart';
+
 class NewCustomerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,10 @@ class NewCustomerScreen extends StatelessWidget {
                 height: 15.h,
               ),
               CustomButton(
-                onTap: () {},
+                onTap: () {
+                  print("sss");
+                  Get.to(AddCustomerScreen());
+                },
                 width: Get.width,
                 height: 60.h,
                 title: "New Customer",

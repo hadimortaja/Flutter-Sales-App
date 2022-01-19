@@ -9,6 +9,7 @@ import 'package:sales_app/view/Other%20Screens/new_customer_screen.dart';
 import 'package:sales_app/view/Other%20Screens/new_product_screen.dart';
 import 'package:sales_app/view/Other%20Screens/products_screen.dart';
 import 'package:sales_app/view/Other%20Screens/settings_screen.dart';
+import 'package:sales_app/view/Other%20Screens/transactions_screen.dart';
 import 'package:sales_app/widgets/custom_text.dart';
 import 'package:sales_app/widgets/drawer_item.dart';
 
@@ -127,7 +128,9 @@ class DrawerWidget extends StatelessWidget {
                 DrawerItem(
                   iconName: Icons.monetization_on_outlined,
                   title: "Transactions",
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(TransactionsScreen());
+                  },
                 ),
                 DrawerItem(
                   iconName: Icons.settings,

@@ -105,7 +105,8 @@ class NewProductScreen extends StatelessWidget {
                                                           8.r)),
                                             )
                                           : index == 1
-                                              ? Container(
+                                              ? 
+                                              Container(
                                                   // height: 120.h,
                                                   width: 120.w,
                                                   decoration: BoxDecoration(
@@ -170,6 +171,7 @@ class NewProductScreen extends StatelessWidget {
                                                     ],
                                                   ),
                                                 )
+                                             
                                               : Icon(
                                                   FontAwesomeIcons.photoVideo),
                                     ],
@@ -300,6 +302,7 @@ class NewProductScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+                      
                           SizedBox(
                             height: 100.h,
                           ),
@@ -401,6 +404,7 @@ class NewProductScreen extends StatelessWidget {
                 ),
               ),
             ),
+         
           ],
         ),
       ),
